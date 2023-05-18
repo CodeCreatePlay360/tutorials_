@@ -4,7 +4,7 @@
 
 This is an overview of a simplified foliage simulation algorithm and how to scatter foliage for your terrains, this will not involve simulating any complex inter specie or intra specie rivalry for resources and sunlight, a more advanced survival algorithm is needed to model interactions, but that's a topic for another day.  
 
-> Visit patreon.com/CodeCreatePlay to download project files for this tutorial.
+> Visit [CodeCreatePlay](https://www.patreon.com/CodeCreatePlay) to download project files for this tutorial.
 
 This simplified foliage simulation algorithm is completed in three steps.
 * **Scattering foliage seeds**: this can be done either procedurally or manually. 
