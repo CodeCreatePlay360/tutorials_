@@ -2,9 +2,17 @@
 
 ![Image](Images//branding.png)
 
-This is an overview of a simplified foliage simulation algorithm and how to scatter foliage for your terrains, this will not involve simulating any complex inter specie or intra specie rivalry for resources and sunlight, a more advanced survival algorithm is needed to model interactions, but that's a topic for another day.  
+In nature growth of foliage of any kind is not random rather the phenomena of foliage growth is stochastic and is governed by certain rules and principles. In case of foliage, new born seeds are usually carried away by wind or attached to animal bodies and gets dropped in a distinct location however if this does not happen than new seeds are dropped in close proximity of parent plant which give rise to clustering of same specie of trees.
+
+![Image](Images//temperate-forest.jpg)
+
+In this tutorial you will learn to create simplified foliage simulation algorithm suitable for real time applications, this will not involve simulating any complex inter specie or intra specie rivalry for resources and sunlight, a more advanced survival algorithm is needed to model interactions, but that's a topic for another day.  
 
 > Visit [CodeCreatePlay](https://www.patreon.com/CodeCreatePlay) to download project files for this tutorial.
+
+| ![Image](Images//RandScatter.png) | ![Image](Images//Simulation.png) |
+| --- | --- |
+| Trees places with random scattering | Trees placed with foliage simulation |
 
 This simplified foliage simulation algorithm is completed in three steps.
 * **Scattering foliage seeds**: this can be done either procedurally or manually. 
@@ -608,7 +616,7 @@ In nest step we check if the new point is within the square bounds.
     }
 ```
 
-Next up is randomizing the scale of prototype of we are going to spawn and collision detection, setting the new scale first is important to get the correct radius of the manually defined colliders which is used for collision detection by the "ValidateSpawnPos" method.
+Next up is randomizing the scale of prototype that is to be spawned and collision checks, setting the new scale first is important to get the correct radius of the manually defined colliders which is used for collision detection by the "ValidateSpawnPos" method.
 
 ```
 // create a randomized scale
@@ -620,7 +628,6 @@ Vector3 randScale = new()
     z = (prototype.transform.localScale.z * prototype.scaleMultiplier) * (1f - scaleVariation),
 };
 
-// check for spawn conditions
 if (prototype && FoliageSimulation.ValidateSpawnPos(newSeedPos, prototype, FoliageSimulation.Instance.SpawnedPrototypes))
 {
 
@@ -650,6 +657,8 @@ if (prototype && FoliageSimulation.ValidateSpawnPos(newSeedPos, prototype, Folia
 }
 ```
 
-That's all for the coding part, hit the "Simulate" button and if all is well then you will have a nice foliage simulation running.
+That's all for the coding part, hit the "Simulate" button and if everything is done correctly then simulation will begin. 
 
 ![Image](Images//06.png)
+
+This concludes the tutorial, if you face any problems with programming part than you can download project files for this tutorial which contains an implementation of this algorithm with a few more features.
